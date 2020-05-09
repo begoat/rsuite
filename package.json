@@ -102,6 +102,7 @@
     "babel-plugin-transform-dev": "^2.0.1",
     "brfs": "^1.6.1",
     "chai": "^4.1.0",
+    "copy-webpack-plugin": "^5.1.1",
     "coveralls": "^2.13.1",
     "cross-env": "^6.0.3",
     "css-loader": "^0.28.11",

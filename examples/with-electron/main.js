@@ -5,6 +5,8 @@
 const { app, BrowserWindow } = require('electron');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const url = require('url');
 
 function createWindow() {
   // Create the browser window.
@@ -16,8 +18,17 @@ function createWindow() {
     }
   });
 
+  const startUrl =
+    process.env.ELECTRON_START_URL || // 开发模式 直接引用 localhost:xxxx 打开
+    url.format({
+      pathname: path.join(__dirname, './index.html'),
+      protocol: 'file:',
+      slashes: true
+    });
+
+  console.log('startUrl', startUrl);
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html');
+  mainWindow.loadURL(startUrl);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
