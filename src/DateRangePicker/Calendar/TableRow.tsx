@@ -5,7 +5,12 @@ import { addDays, isSameDay, isBefore, isAfter, getDate, format } from 'date-fns
 
 import { getUnhandledProps, prefix, defaultProps } from '../../utils';
 import IntlContext from '../../IntlProvider/IntlContext';
-import { TargetEnum } from '../DateRangePicker.d';
+
+enum TargetEnum {
+  CALENDAR = 'CALENDAR',
+  TOOLBAR_BUTTON_OK = 'TOOLBAR_BUTTON_OK',
+  TOOLBAR_SHORTCUT = 'TOOLBAR_SHORTCUT'
+}
 
 export interface TableRowProps {
   weekendDate?: Date;

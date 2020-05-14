@@ -33,8 +33,14 @@ import {
   getToggleWrapperClassName
 } from '../Picker';
 
-import { DateRangePickerProps, ValueType, TargetEnum } from './DateRangePicker.d';
+import { DateRangePickerProps, ValueType } from './DateRangePicker.d';
 import { PLACEMENT } from '../constants';
+
+enum TargetEnum {
+  CALENDAR = 'CALENDAR',
+  TOOLBAR_BUTTON_OK = 'TOOLBAR_BUTTON_OK',
+  TOOLBAR_SHORTCUT = 'TOOLBAR_SHORTCUT'
+}
 
 interface DateRangePickerState {
   value: ValueType;
